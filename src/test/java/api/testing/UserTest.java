@@ -27,10 +27,8 @@ class UserTest {
     @Test
     @DisplayName("When an object is created without the parameters passed to it, then true")
     void createObjectWithOutParameters() {
-        boolean actualResult1 = user2.getLogin() == null;
-        boolean actualResult2 = user2.getEmail() == null;
-        assertTrue(actualResult1,"Параметры не null!");
-        assertTrue(actualResult2,"Параметры не null!");
+        assertNull(user2.getLogin(),"Параметры не null!");
+        assertNull(user2.getEmail(),"Параметры не null!");
     }
 
     @Test
@@ -45,7 +43,6 @@ class UserTest {
     @Test
     @DisplayName("When login and email are not equal, then true")
     void checkLoginAndEmail() {
-        boolean actualResult = user1.getLogin().equals(user1.getEmail());
-        assertFalse(actualResult, "Логин и email не должны быть равны!");
+        assertNotEquals(user1.getLogin(),user1.getEmail(),"Логин и email не должны быть одинаковыми!");
     }
 }
